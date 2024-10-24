@@ -34,7 +34,6 @@ body{
         border-radius: rem(10);
         
         .personTitle{
-            // border: 1px solid red;
             display: flex;
             gap: .8rem;
             div{
@@ -63,13 +62,11 @@ body{
                 
             }
             .topTitle{
-                // border: 1px solid red;
                 padding-top: .7rem;
                 padding-bottom: .9rem;
                 font-weight: 500;
                 font-size: 1.05rem;
                 line-height: 22px;
-                // padding-right: 1.3rem;
             }
             
             .bottomDescription{
@@ -106,7 +103,18 @@ body{
     }
 }
 
-@media (min-width:1000px) and (min-height: 600px){
+@media (min-width:500px) and (min-height: 500px){
+    .wrap{
+        grid-template-columns: 2fr 2fr;
+        .grid-col-span-2{
+            grid-column: span 2;
+        }
+        .grid-item:last-child{
+            grid-column: span 2;
+        }
+    }
+}
+@media (min-width:1000px) and (min-height: 800px){
     body{
         height: 100vh;
         align-items: center;
@@ -122,10 +130,8 @@ body{
         grid-template-columns: repeat(4, 4fr);
     }
     .grid-item:last-child{
-        grid-column: 4;
         grid-row-start: 1;
         grid-row-end: span 2;
-        // grid-column-end: 5;
-        // grid-row-start: 1;
+        grid-column-start: 4 !important;
     }
 }
