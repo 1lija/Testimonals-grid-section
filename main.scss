@@ -1,0 +1,131 @@
+$violet: hsl(263, 55%, 52%);
+$grayishBlue: hsl(217, 19%, 35%);
+$blackishBlue: hsl(219, 29%, 14%);
+$white: hsl(0,0,100%);
+$lightGray: hsl(0, 0%, 81%);
+$lightGrayishBlue: hsl(210, 46%, 95%);
+
+@function rem($value){
+    @return ($value/16)*1rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", serif;
+}
+body{
+    background-color:$lightGrayishBlue;
+    display: flex;
+    justify-content: center;    
+}
+.wrap{
+    width: 86%;
+    height: max-content;
+    display: grid;
+    gap: 1.3rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+
+    .grid-item{
+        padding: rem(30);
+        border-radius: rem(10);
+        
+        .personTitle{
+            // border: 1px solid red;
+            display: flex;
+            gap: .8rem;
+            div{
+                display: flex;
+                flex-direction: column;
+            }
+            img{
+                border-radius: 50%;
+                border: 1.5px solid hsl(0, 0%, 50%);
+                width: 2rem;
+                height: 2rem;
+            }
+            .graduate{
+                opacity: 50%;
+                font-size: 11px !important;
+            }
+            span{
+                color: $white;
+                font-size: 13px;
+            }
+        }
+        .personDescription{
+            
+            p{
+                color: white;
+                
+            }
+            .topTitle{
+                // border: 1px solid red;
+                padding-top: .7rem;
+                padding-bottom: .9rem;
+                font-weight: 500;
+                font-size: 1.05rem;
+                line-height: 22px;
+                // padding-right: 1.3rem;
+            }
+            
+            .bottomDescription{
+                opacity: 70%;
+                font-size: rem(11);
+            }
+        }
+    }
+    .grid-Daniel{
+        background-color: $violet;
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position-x: 85%;
+    }
+    .grid-Jonathan{
+        background-color: $grayishBlue;
+    }
+
+    .grid-Jeanette, .grid-Kira{
+        background-color: $white;
+        p,span{
+            color: black !important;
+        }
+        .personTitle img{
+            border: none;
+        }
+    }
+
+    .grid-Patrick{
+        background-color: $blackishBlue;
+        .personTitle img{
+            border: 1.5px solid $violet;
+        }
+    }
+}
+
+@media (min-width:1000px) and (min-height: 600px){
+    body{
+        height: 100vh;
+        align-items: center;
+    }
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+    .grid-row-span-2{
+        grid-row: span 2;
+    }
+    .wrap{
+        width: 80%;
+        grid-template-columns: repeat(4, 4fr);
+    }
+    .grid-item:last-child{
+        grid-column: 4;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        // grid-column-end: 5;
+        // grid-row-start: 1;
+    }
+}

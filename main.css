@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", serif;
+}
+
+body {
+  background-color: hsl(210, 46%, 95%);
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 86%;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  gap: 1.3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.wrap .grid-item {
+  padding: 1.875rem;
+  border-radius: 0.625rem;
+}
+.wrap .grid-item .personTitle {
+  display: flex;
+  gap: 0.8rem;
+}
+.wrap .grid-item .personTitle div {
+  display: flex;
+  flex-direction: column;
+}
+.wrap .grid-item .personTitle img {
+  border-radius: 50%;
+  border: 1.5px solid hsl(0, 0%, 50%);
+  width: 2rem;
+  height: 2rem;
+}
+.wrap .grid-item .personTitle .graduate {
+  opacity: 50%;
+  font-size: 11px !important;
+}
+.wrap .grid-item .personTitle span {
+  color: hsl(0, 0%, 100%);
+  font-size: 13px;
+}
+.wrap .grid-item .personDescription p {
+  color: white;
+}
+.wrap .grid-item .personDescription .topTitle {
+  padding-top: 0.7rem;
+  padding-bottom: 0.9rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 22px;
+}
+.wrap .grid-item .personDescription .bottomDescription {
+  opacity: 70%;
+  font-size: 0.6875rem;
+}
+.wrap .grid-Daniel {
+  background-color: hsl(263, 55%, 52%);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position-x: 85%;
+}
+.wrap .grid-Jonathan {
+  background-color: hsl(217, 19%, 35%);
+}
+.wrap .grid-Jeanette, .wrap .grid-Kira {
+  background-color: hsl(0, 0%, 100%);
+}
+.wrap .grid-Jeanette p, .wrap .grid-Jeanette span, .wrap .grid-Kira p, .wrap .grid-Kira span {
+  color: black !important;
+}
+.wrap .grid-Jeanette .personTitle img, .wrap .grid-Kira .personTitle img {
+  border: none;
+}
+.wrap .grid-Patrick {
+  background-color: hsl(219, 29%, 14%);
+}
+.wrap .grid-Patrick .personTitle img {
+  border: 1.5px solid hsl(263, 55%, 52%);
+}
+
+@media (min-width: 1000px) and (min-height: 600px) {
+  body {
+    height: 100vh;
+    align-items: center;
+  }
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+  .grid-row-span-2 {
+    grid-row: span 2;
+  }
+  .wrap {
+    width: 80%;
+    grid-template-columns: repeat(4, 4fr);
+  }
+  .grid-item:last-child {
+    grid-column: 4;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+  }
+}/*# sourceMappingURL=main.css.map */
